@@ -1,7 +1,6 @@
 import os
 import requests
 from pathlib import Path
-import uvicorn
 
 MODEL_PATH = "assets/models/skin_disease_model.tflite"
 GDRIVE_FILE_ID = "1qr50bnMKsua4NhxyER_lmzXL8f5t_Ped"
@@ -18,11 +17,7 @@ def download_model():
             f.write(chunk)
     print("✅ Model downloaded!")
 
-download_model()
+download_model()  # runs once on startup
 
-# IMPORTANT: Import and expose the app from api.py
-from api import app  # This creates the 'app' variable
-
-# Optional: Run directly
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+# ADD THIS LINE - Import and expose the FastAPI app
+from api import app
