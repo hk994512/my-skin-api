@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 # ─── Constants ────────────────────────────────────────────────
 IMG_SIZE   = (224, 224)
-MODEL_PATH = "/app/assets/models/skin_disease_model.tflite"
+MODEL_PATH = "/app/assets/model/skin_disease_model.tflite"
 
 CLASS_INFO = {
     0: {"code": "akiec", "name": "Actinic Keratoses",    "risk": "High",     "color": "#FF4444"},
