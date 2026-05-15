@@ -13,7 +13,6 @@ def download_model():
     url = f"https://drive.google.com/uc?export=download&id={GDRIVE_FILE_ID}&confirm=t"
     session = requests.Session()
     r = session.get(url, stream=True)
-    # Handle Google's virus scan warning page for large files
     for key, value in r.cookies.items():
         if key.startswith("download_warning"):
             url = f"https://drive.google.com/uc?export=download&id={GDRIVE_FILE_ID}&confirm={value}"
@@ -25,7 +24,6 @@ def download_model():
                 f.write(chunk)
     print("✅ Model downloaded!")
 
-download_model()  # runs once on startup
+download_model()
 
-# ADD THIS LINE - Import and expose the FastAPI app
 from api import app
