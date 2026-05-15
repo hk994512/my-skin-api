@@ -9,7 +9,7 @@ def download_model():
     if Path(MODEL_PATH).exists():
         return
     print("⬇️ Downloading model...")
-    Path("assets/models").mkdir(parents=True, exist_ok=True)
+    Path("assets/model").mkdir(parents=True, exist_ok=True)
     url = f"https://drive.google.com/uc?export=download&id={GDRIVE_FILE_ID}"
     r = requests.get(url, stream=True)
     with open(MODEL_PATH, "wb") as f:
